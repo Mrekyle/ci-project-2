@@ -18,11 +18,21 @@ body {
 
 #page-title {
     color: whitesmoke;
-    font-family: 'Rubik';
+    font-family: 'Rubik', serif;
     font-weight: normal;
     font-size: 5em;
     text-align: center;
     margin-top: 12px;
+}
+
+/* Game Container */
+
+.gme-info {
+    color: whitesmoke;
+    font-family: 'Mina', serif;
+    font-size: 3em;
+    font-weight: normal;
+    text-align: center;
 }
 
 /* Footer */
