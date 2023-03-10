@@ -32,7 +32,18 @@ body {
     font-family: 'Mina', serif;
     font-size: 3em;
     font-weight: normal;
-    text-align: center;
+}
+
+.gme-container {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    gap: 10px;
+}
+
+.card {
+    background-color: black;
+    height: 175px;
+    width: 125px;
 }
 
 /* Footer */
