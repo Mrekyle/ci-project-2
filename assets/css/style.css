@@ -45,15 +45,37 @@ body {
 .gme-container {
     display: grid;
     grid-template-columns: repeat(4, auto);
-    gap: 10px;
+    gap: 15px;
     margin: 10px;
     justify-content: center;
 }
 
 .card {
+    position: relative;
     background-color: black;
     height: 150px;
     width: 125px;
+    border-radius: 10px 10px 10px 10px;
+}
+
+.card-face-bg {
+    height: 150px;
+    width: 125px;
+}
+
+.card-face {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-bg {
+    width: 125px;
+    height: 100%;
+    border-radius: 10px 10px 10px 10px;
 }
 
 /* Footer */
