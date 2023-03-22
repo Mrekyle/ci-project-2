@@ -1,11 +1,17 @@
 const startButton = document.getElementById('start-btn');
 const sounds = document.getElementById('sounds');
+const questionContainer = document.getElementById('question-container');
+
+startButton.addEventListener('click', startNewGame);
 
 /**
  * Starts a new game when the quiz is loaded and the button is pressed
  */
 function startNewGame() {
-
+    console.log('Game Started');
+    startButton.classList.add('hidden');
+    questionContainer.classList.remove('hidden');
+    nextQuestion();
 }
 
 /**
