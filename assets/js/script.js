@@ -1,6 +1,11 @@
 const startButton = document.getElementById('start-btn');
 const sounds = document.getElementById('sounds');
 const questionContainer = document.getElementById('question-container');
+const questionElement = document.getElementById('question');
+const answers = document.getElementById('answer-btn')
+
+let shuffledQuestions;
+let currentQuestionI;
 
 startButton.addEventListener('click', startNewGame);
 
@@ -10,6 +15,8 @@ startButton.addEventListener('click', startNewGame);
 function startNewGame() {
     console.log('Game Started');
     startButton.classList.add('hidden');
+    shuffledQuestions = questions.sort(() => Math.random() - .5);
+    currentQuestionI = 0;
     questionContainer.classList.remove('hidden');
     nextQuestion();
 }
@@ -19,7 +26,23 @@ function startNewGame() {
  * or wrong answer
  */
 function nextQuestion() {
+    showQuestion(shuffledQuestions[currentQuestionI]);
+}
 
+/**
+ * Shows the next question in the quiz once the quiz is started
+ */
+function showQuestion(question) {
+    questionElement.innerText = question.question;
+    question.answers.forEach(answer => {
+        const btn = document.createElement('button');
+        btn.innerText = answer.text;
+        btn.classList.add('btn');
+        if (answers.correct) {
+            btn.dataset.correct = answers.correct
+        }
+        btn.addEventListener('click', selectAnswer);
+    });
 }
 
 /**
