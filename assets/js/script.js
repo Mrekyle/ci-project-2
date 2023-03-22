@@ -52,6 +52,7 @@ function showQuestion(question) {
  * Resets the quiz questions to replace the default html
  */
 function resetQuiz() {
+    clearStatus(document.body);
     nextButton.classList.add('hidden');
     while (answerElement.firstChild) {
         answerElement.removeChild(answerElement.firstChild);
@@ -62,7 +63,33 @@ function resetQuiz() {
  * Checks the answer to see if it is correct or wrong
  */
 function selectAnswer(event) {
+    const selectedButton = event.target;
+    const correct = selectedButton.dataset.correct;
+    setStatus(document.body, correct);
+    Array.from(answerElement.children).forEach(btn => {
+        setStatus(btn, btn.dataset.correct);
+    })
+}
 
+/**
+ * Adds correct or wrong classes to the html elements.
+ */
+function setStatus(element, correct) {
+    clearStatus(element);
+    if(correct) {
+        element.classList.add('correct');
+        console.log('correct answer')
+    } else {
+        element.classList.add('wrong');
+    }
+}
+
+/**
+ * Clears the correct or wrong classes from the html elements.
+ */
+function clearStatus(element) {
+    element.classList.remove('correct');
+    element.classList.remove('wrong');
 }
 
 /**
@@ -86,12 +113,10 @@ const questions = [
     {
         question: 'What is 2 + 2',
         answers: [
-            {
-                text: '4', correct: true,
-                text: '32', correct: false,
-                text: '3', correct: false,
-                text: '19', correct: false
-            }
+            { text: '4', correct: true },
+            { text: '32', correct: false },
+            { text: '3', correct: false },
+            { text: '19', correct: false } 
         ]
     }
 ]
