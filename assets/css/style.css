@@ -48,7 +48,33 @@ body {
     box-shadow: 0 0 15px 5px;
 }
 
+/* Buttons */
 
+.btn-grid {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    gap: 10px;
+    margin: 10 0;
+}
+
+.btn {
+    border-radius: 5px;
+    padding: 5px;
+    background-color: #2bab00;
+    outline: none;
+    font-family: 'Rubik';
+    color: white;
+    font-size: 20px;
+    margin: 5px;
+}
+
+.sound-btn {
+    border-radius: 5px;
+    background-color: #424147;
+    color: whitesmoke;
+    margin: 5px;
+    padding: 5px;
+}
 /* Footer */
 
 footer {
