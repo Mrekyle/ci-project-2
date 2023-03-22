@@ -4,14 +4,40 @@
 
 * {
     box-sizing: border-box;
-    background-color: 1c9dff;
     font-family: 'Mina', 'Rubik', 'Times New Roman', Times, serif;
+    
 }
 
-html {
-    min-height: 100vh;
+body {
+    background-color: #1c9dff;
+    padding: 0 auto;
+    margin: 0 auto;
+    height: 100%;
+    width: 100%;
 }
 
+/* Title */
+
+.title {
+    text-align: center;
+    font-size: xx-large;
+}
+
+/* Score */
+
+#score {
+    text-align: center;
+    padding-right: 80px;
+}
+/* Quiz Container */
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1200px;
+    max-width: 80%;
+}
 /* Footer */
 
 footer {
