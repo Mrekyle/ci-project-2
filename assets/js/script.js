@@ -1,8 +1,9 @@
 const startButton = document.getElementById('start-btn');
+const nextButton = document.getElementById('next-btn');
 const sounds = document.getElementById('sounds');
 const questionContainer = document.getElementById('question-container');
 const questionElement = document.getElementById('question');
-const answers = document.getElementById('answer-btn')
+const answerElement = document.getElementById('answer-btn')
 
 let shuffledQuestions;
 let currentQuestionI;
@@ -26,6 +27,7 @@ function startNewGame() {
  * or wrong answer
  */
 function nextQuestion() {
+    resetQuiz();
     showQuestion(shuffledQuestions[currentQuestionI]);
 }
 
@@ -38,17 +40,28 @@ function showQuestion(question) {
         const btn = document.createElement('button');
         btn.innerText = answer.text;
         btn.classList.add('btn');
-        if (answers.correct) {
-            btn.dataset.correct = answers.correct
+        if (answer.correct) {
+            btn.dataset.correct = answer.correct;
         }
         btn.addEventListener('click', selectAnswer);
+        answerElement.appendChild(btn);
     });
+}
+
+/**
+ * Resets the quiz questions to replace the default html
+ */
+function resetQuiz() {
+    nextButton.classList.add('hidden');
+    while (answerElement.firstChild) {
+        answerElement.removeChild(answerElement.firstChild);
+    }
 }
 
 /**
  * Checks the answer to see if it is correct or wrong
  */
-function selectAnswer() {
+function selectAnswer(event) {
 
 }
 
@@ -72,7 +85,7 @@ function stats() {
 const questions = [
     {
         question: 'What is 2 + 2',
-        answer: [
+        answers: [
             {
                 text: '4', correct: true,
                 text: '32', correct: false,
