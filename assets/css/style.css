@@ -1,7 +1,22 @@
+/* General Styling Rules */
+
+@import url('https://fonts.googleapis.com/css2?family=Mina&family=Rubik&display=swap');
+
+* {
+    box-sizing: border-box;
+    background-color: 1c9dff;
+    font-family: 'Mina', 'Rubik', 'Times New Roman', Times, serif;
+}
+
+html {
+    min-height: 100vh;
+}
+
 /* Footer */
 
 footer {
     text-align: center;
+    font-size: 20px;
 }
 
 .git {
