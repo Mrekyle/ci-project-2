@@ -42,3 +42,20 @@ function soundControl() {
 function stats() {
 
 }
+
+/**
+ * Questions for the quiz
+ */
+const questions = [
+    {
+        question: 'What is 2 + 2',
+        answer: [
+            {
+                text: '4', correct: true,
+                text: '32', correct: false,
+                text: '3', correct: false,
+                text: '19', correct: false
+            }
+        ]
+    }
+]
