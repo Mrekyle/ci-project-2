@@ -120,12 +120,183 @@ function stats() {
  */
 const questions = [
     {
-        question: 'What is 2 + 2',
+        question: 'What is 2 + 2?',
         answers: [
             { text: '4', correct: true },
-            { text: '32', correct: false },
+            { text: '5', correct: false },
             { text: '3', correct: false },
-            { text: '19', correct: false } 
+            { text: 'Fish?', correct: true } 
+        ]
+    },
+    {
+        question: 'What is the capital of Finland?',
+        answers: [
+            { text: 'Tokyo', correct: false },
+            { text: 'London', correct: false },
+            { text: 'Helsinki', correct: true },
+            { text: 'New York', correct: false }
+        ]
+    },
+    { 
+        question: 'How many bones does a shark have?',
+        answers: [
+            { text: 'None, Its all cartilage', correct: true },
+            { text: '43', correct: false },
+            { text: '76', correct: false },
+            { text: '1', correct: false }
+        ]
+    },
+    {
+        question: 'Area 51 is located in which American state?',
+        answers: [
+            { text: 'Mississippi', correct: false },
+            { text: 'Texas', correct: false },
+            { text: 'Idaho', correct: false },
+            { text: 'Nevada', correct: false }
+        ]
+    },
+    {
+        question: 'What is a group of ravens called?',
+        answers: [
+            { text: 'Pack', correct: false },
+            { text: 'Conglomerate', correct: false },
+            { text: 'An Unkindness', correct: false },
+            { text: 'Gaggle', correct: false }
+        ]
+    },
+    { 
+        question: 'What is David Bowies original surname?',
+        answers: [
+            { text: 'Hollister', correct: false },
+            { text: 'Humphries', correct: false },
+            { text: 'Dann', correct: false },
+            { text: 'Jones', correct: true }
+        ]
+    },
+    {
+        question: 'Who won the X Factor in 2011?',
+        answers: [
+            { text: 'Ollie Murs', correct: false },
+            { text: 'Little Mix', correct: true },
+            { text: 'Lincoln Park', correct: false },
+            { text: 'Alexandra Burke', correct: false }
+        ]
+    },
+    { 
+        question: 'What grain is the Japanese spirit Sake made from?',
+        answers: [
+            { text: 'Barley', correct: false },
+            { text: 'Rice', correct: true },
+            { text: 'quinoa', correct: false },
+            { text: 'Oats', correct: false }
+        ]
+    }, 
+    { 
+        question: 'Who is the manager of the England football team as of 2020?',
+        answers: [
+            { text: 'Sam Allardyce', correct: false },
+            { text: 'Fabio Capello', correct: false },
+            { text: 'Stebe McClaren', correct: false },
+            { text: 'Gareth Southgate', correct: true }
+        ]
+    },
+    { 
+        question: 'What year was Google Images invented?',
+        answers: [
+            { text: 'July 2001', correct: true },
+            { text: 'August 2003', correct: false },
+            { text: 'March 2001', correct: false },
+            { text: 'April 2002', correct: false }
+        ]
+    },
+    {
+        question: 'How many sides does a heptadecagon have?',
+        answers: [
+            { text: '13', correct: false },
+            { text: '17', correct: true },
+            { text: '21', correct: false },
+            { text: '19', correct: false }
+        ]
+    },
+    {
+        question: 'How many time zones are in Russia?',
+        answers: [
+            { text: '18', correct: false },
+            { text: '11', correct: true }, 
+            { text: '14', correct: false },
+            { text: '9', correct: false }
+        ]
+    }, 
+    {
+        question: 'Which UK city is the artist Banksy from?',
+        answers: [
+            { text: 'Bristol', correct: true },
+            { text: 'Chelmsford', correct: false },
+            { text: 'Colchester', correct: false },
+            { text: 'Manchester', correct: false }
+        ]
+    },
+    { 
+        question: 'Who invented the World Wide Web in 1990?',
+        answers: [
+            { text: 'Jimmy Carr', correct: false },
+            { text: 'Barack Obama', correct: false },
+            { text: 'Tim Burners-Lee', correct: true },
+            { text: 'Stephan Hawking', correct: false }
+        ]
+    },
+    {
+        question: 'What is a group of spiders called?',
+        answers: [
+            { text: 'Gathering', correct: false },
+            { text: 'Cluster', correct: true },
+            { text: 'Pocahontas', correct: false },
+            { text: 'Huddle', correct: false }
+        ]
+    },
+    {
+        question: 'What is the smallest country in the world?',
+        answers: [
+            { text: 'Vatican City', correct: true }, 
+            { text: 'Latvia', correct: false },
+            { text: 'Canada', correct: false },
+            { text: 'Libya', correct: false }
+        ]
+    }, 
+    {
+        question: 'What is the name for a donkey crossed with a zebra?', 
+        answers: [
+        { text: 'Cheetah', correct: false },
+        { text: 'Koala', correct: false },
+        { text: 'Pangolin', correct: false },
+        { text: 'Zeedonk', correct: true }
+        ]
+    }, 
+    { 
+        question: 'How many Prime Ministers did the UK have in 2022?',
+        answers: [
+            { text: '3', correct: true },
+            { text: '1', correct: false },
+            { text: '2', correct: false },
+            { text: '5', correct: false }
+        ]
+    },
+    {
+        question: 'Who was the barista in friends?', 
+        answers: [
+            { text: 'Harry', correct: false }, 
+            { text: 'Gunther', correct: true },
+            { text: 'Ross', correct: false }, 
+            { text: 'Janice', correct: false }
+        ]
+    },
+    { 
+        question: 'What does "He" stand for in the periodic table?',
+        answers: [
+            { text: 'Hydrogen', correct: false }, 
+            { text: 'Calcium', correct: false },
+            { text: 'Gold', correct: false },
+            { text: 'Helium', correct: true }
         ]
     }
 ]
