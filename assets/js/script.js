@@ -9,6 +9,10 @@ let shuffledQuestions;
 let currentQuestionI;
 
 startButton.addEventListener('click', startNewGame);
+nextButton.addEventListener('click', () => {
+    currentQuestionI++
+    nextQuestion;
+})
 
 /**
  * Starts a new game when the quiz is loaded and the button is pressed
@@ -69,6 +73,12 @@ function selectAnswer(event) {
     Array.from(answerElement.children).forEach(btn => {
         setStatus(btn, btn.dataset.correct);
     })
+    if (shuffledQuestions.length > currentQuestionI +1) {
+        nextButton.classList.remove('hidden');
+    } else {
+        startButton.innerText = 'Restart';
+        startButton.classList.remove('hidden');
+    }
 }
 
 /**
@@ -78,7 +88,6 @@ function setStatus(element, correct) {
     clearStatus(element);
     if(correct) {
         element.classList.add('correct');
-        console.log('correct answer')
     } else {
         element.classList.add('wrong');
     }
