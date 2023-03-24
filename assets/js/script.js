@@ -298,5 +298,50 @@ const questions = [
             { text: 'Gold', correct: false },
             { text: 'Helium', correct: true }
         ]
+    }, 
+    {
+        question: 'What city had the first fashion week?',
+        answers: [
+            { text: 'New York', correct: true },
+            { text: 'Milan', correct: false },
+            { text: 'Paris', correct: false },
+            { text: 'London', correct: false }
+        ]
+    }, 
+    { 
+        question: 'What is the nut in the middle of a Ferrero Rocher?',
+        answers: [
+            { text: 'Peanut', correct: false },
+            { text: 'Macadamia', correct: false },
+            { text: 'Pilly Nut', correct: false },
+            { text: 'Hazelnut', correct: true }
+        ]
+    },
+    {
+        question: 'Who is the highest spiritual leader of Tibet?',
+        answers: [
+            { text: 'The Pope', correct: false },
+            { text: 'Jesus Christ', correct: false },
+            { text: 'James Redfield', correct: false },
+            { text: 'The Dalai Lama', correct: true }
+        ]
+    },
+    { 
+        question: 'When was the first iPhone release?',
+        answers: [
+            { text: '2019', correct: false },
+            { text: '2003', correct: false },
+            { text: '2007', correct: true },
+            { text: '2019', correct: false }
+        ]
+    },
+    { 
+        question: 'What is the largest organ in the human body?',
+        answers: [
+            { text: 'The Skin', correct: true },
+            { text: 'The Heart', correct: false },
+            { text: 'The Liver', correct: false },
+            { text: 'The Brain', correct: false }
+        ]
     }
 ]
