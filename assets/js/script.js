@@ -4,6 +4,8 @@ const sounds = document.getElementById('sounds');
 const questionContainer = document.getElementById('question-container');
 const questionElement = document.getElementById('question');
 const answerElement = document.getElementById('answer-btn')
+const incrementScore = document.getElementById('score');
+const playAudio = document.getElementById('sounds');
 
 let shuffledQuestions;
 let currentQuestionI;
