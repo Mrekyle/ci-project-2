@@ -11,7 +11,7 @@ let currentQuestionI;
 startButton.addEventListener('click', startNewGame);
 nextButton.addEventListener('click', () => {
     currentQuestionI++
-    nextQuestion;
+    nextQuestion();
 })
 
 /**
@@ -152,7 +152,7 @@ const questions = [
             { text: 'Mississippi', correct: false },
             { text: 'Texas', correct: false },
             { text: 'Idaho', correct: false },
-            { text: 'Nevada', correct: false }
+            { text: 'Nevada', correct: true }
         ]
     },
     {
@@ -160,7 +160,7 @@ const questions = [
         answers: [
             { text: 'Pack', correct: false },
             { text: 'Conglomerate', correct: false },
-            { text: 'An Unkindness', correct: false },
+            { text: 'An Unkindness', correct: true },
             { text: 'Gaggle', correct: false }
         ]
     },
