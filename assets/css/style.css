@@ -16,6 +16,11 @@ body, html {
     width: 100%;
 }
 
+:root {
+    --hue-wrong: 0;
+    --hue-correct: 145;
+}
+
 /* Title */
 
 .title {
@@ -88,6 +93,14 @@ body, html {
     border-color: black;
 }
 
+.btn.correct {
+    background-color: rgb(0, 187, 255);
+}
+
+.btn.wrong {
+    background-color: rgb(213, 0, 0);
+}
+
 .sound-btn {
     border-radius: 5px;
     background-color: #424147;
@@ -104,6 +117,7 @@ body, html {
 }
 
 .controls{
+    margin-left: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
