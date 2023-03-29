@@ -5,7 +5,8 @@ const questionContainer = document.getElementById('question-container');
 const questionElement = document.getElementById('question');
 const answerElement = document.getElementById('answer-btn')
 const incrementScore = document.getElementById('score');
-const playAudio = document.getElementById('sounds');
+const timeDecrease = document.getElementById('time');
+let scoreCount = 0;
 
 let shuffledQuestions;
 let currentQuestionI;
@@ -104,17 +105,23 @@ function clearStatus(element) {
 }
 
 /**
- * Controls the sounds by turning them on or off for the quiz
- */
-function soundControl() {
-
-}
-
-/**
  * Changes the stats of the quiz score and timer
  */
-function stats() {
 
+function checkAns() {
+    let currentQ = questions[currentQuestionI];
+
+    if (userInput == currentQ.correct) {
+        incrementScore();
+        nextQuestion();
+    };
+
+    console.log(userInput);
+}
+
+function incrementScore() {
+    scoreCount++;
+    score.innerText = scoreCount;
 }
 
 /**
