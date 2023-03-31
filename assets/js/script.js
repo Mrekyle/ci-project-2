@@ -1,12 +1,15 @@
 const startButton = document.getElementById('start-btn');
 const nextButton = document.getElementById('next-btn');
-const sounds = document.getElementById('sounds');
+const gameContainer = document.getElementById('game-container');
 const questionContainer = document.getElementById('question-container');
 const questionElement = document.getElementById('question');
 const answerElement = document.getElementById('answer-btn')
-const incrementScore = document.getElementById('score');
-const timeDecrease = document.getElementById('time');
-let scoreCount = 0;
+const correctAnswer = document.getElementById('score');
+const wrongAnswer = document.getElementById('wrong');
+const endGame = document.getElementById('end-game')
+
+let correctScoreCount = 0;
+let wrongAnswerCount = 0;
 
 let shuffledQuestions;
 let currentQuestionI;
@@ -52,6 +55,7 @@ function showQuestion(question) {
         }
         btn.addEventListener('click', selectAnswer);
         answerElement.appendChild(btn);
+        startButton.classList.add('hidden');
     });
 }
 
@@ -61,6 +65,8 @@ function showQuestion(question) {
 function resetQuiz() {
     clearStatus(document.body);
     nextButton.classList.add('hidden');
+    answerElement.classList.remove('hidden');
+    questionElement.classList.remove('hidden');
     while (answerElement.firstChild) {
         answerElement.removeChild(answerElement.firstChild);
     }
@@ -79,9 +85,15 @@ function selectAnswer(event) {
     if (shuffledQuestions.length > currentQuestionI +1) {
         nextButton.classList.remove('hidden');
     } else {
-        startButton.innerText = 'Restart';
         startButton.classList.remove('hidden');
+        startButton.innerText = 'Restart';
+        gameContainer.classList.add('hidden');
+        endGame.classList.remove('hidden');
+        endGame.classList.add('container');
+        answerElement.classList.add('hidden');
+        questionElement.classList.add('hidden');
     }
+    
 }
 
 /**
@@ -107,150 +119,216 @@ function clearStatus(element) {
 /**
  * Changes the stats of the quiz score and timer
  */
-
-function checkAns() {
+function checkAns(userInput) {
     let currentQ = questions[currentQuestionI];
 
     if (userInput == currentQ.correct) {
-        incrementScore();
         nextQuestion();
+        incrementScore();
+    } else {
+        nextQuestion();
+        incrementWrongScore();
     };
 
     console.log(userInput);
 }
 
 function incrementScore() {
-    scoreCount++;
-    score.innerText = scoreCount;
+    correctScoreCount++;
+    score.innerText = correctScoreCount;
+}
+
+function incrementWrongScore() {
+    wrongAnswerCount++;
+    wrongAnswer.innerText = wrongAnswerCount;
+}
+
+function gameOver() {
+
 }
 
 /**
- * Questions for the quiz
+ * Questions for the Quiz
  */
 const questions = [
     {
-        question: 'What is 2 + 2?',
-        answers: ['4', '5', '3', 'Fish'],
-        answersI: 1,
-    },
-    {
-        question: 'What is the capital of Finland?',
-        answers: ['Tokyo', 'London', 'Helsinki', 'New York'],
-        answersI: 3,
-    },
-    { 
-        question: 'How many bones does a shark have?',
-        answers: ['None its all cartilage', '43', '76', '1'],
-        answersI: 1,
-    },
-    {
-        question: 'Area 51 is located in which American state?',
-        answers: ['Mississippi', 'Texas', 'Idaho', 'Nevada'],
-        answersI: 4,
-    },
-    {
-        question: 'What is a group of ravens called?',
-        answers: ['Pack', 'Conglomerate', 'An Unkindness', 'Gaggle'],
-        answersI: 3,
-    },
-    { 
-        question: 'What is David Bowies original surname?',
-        answers: ['Hollister', 'Humphries', 'Dann', 'Jones'],
-        answersI: 4,
-    },
-    {
-        question: 'Who won the X Factor in 2011?',
-        answers: ['Ollie Murs', 'Little Mix', 'Lincoln Park', 'Alexandra Burke'],
-        answersI: 2,
-    },
-    { 
-        question: 'What grain is the Japanese spirit Sake made from?',
-        answers: ['Barley', 'Rice', 'Quiona', 'Oats'],
-        answersI: 2,
-    }, 
-    { 
-        question: 'Who is the manager of the England football team as of 2020?',
-        answers: ['Sam Allardyce', 'Fabio Capello', 'Stebe McClaren', 'Gareth Southgate'],
-        answersI: 4,
-    },
-    { 
-        question: 'What year was Google Images invented?',
-        answers: [' July 2001', 'August 2003', 'March 2001', 'April 2002'],
-        answersI: 1,
-    },
-    {
-        question: 'How many sides does a heptadecagon have?',
-        answers: ['13', '17', '21', '19'],
-        answersI: 2,
-    },
-    {
-        question: 'How many time zones are in Russia?',
-        answers: ['18', '11', '14', '9'],
-        answersI: 2,
-    }, 
-    {
-        question: 'Which UK city is the artist Banksy from?',
-        answers: ['Bristol', 'Chelmsford', 'Colchester', 'Manchester'],
-        answersI: 1,
-    },
-    { 
-        question: 'Who invented the World Wide Web in 1990?',
-        answers: ['Jimmy Carr', 'Barack Obama', 'Tim Burners-Lee', 'Stephan Hawking'],
-        answersI: 3,
-    },
-    {
-        question: 'What is a group of spiders called?',
-        answers: ['Gathering', 'Cluster', 'Pocahontas', 'Huddle'],
-        answersI: 2,
-    },
-    {
-        question: 'What is the smallest country in the world?',
-        answers: ['Vatican City', 'Latvia', 'Canada', 'Libya'],
-        answersI: 1,
-    }, 
-    {
-        question: 'What is the name for a donkey crossed with a zebra?', 
-        answers: ['Cheetah', 'Koala', 'Pangolin', 'Zeedonk'],
-        answersI: 4,
-    }, 
-    { 
-        question: 'How many Prime Ministers did the UK have in 2022?',
-        answers: ['3', '1', '2', '5'],
-        answersI: 1,
-    },
-    {
-        question: 'Who was the barista in friends?', 
-        answers: ['Harry', 'Gunther', 'Ross', 'Janice'],
-        answersI: 2,
-    },
-    { 
-        question: 'What does "He" stand for in the periodic table?',
-        answers: ['Hydrogen', 'Calcium', 'Gold', 'Helium'],
-        answersI: 4,
-    }, 
-    {
-        question: 'What city had the first fashion week?',
-        answers: ['New York', 'Milan', 'Paris', 'London'],
-        answersI: 1,
-    }, 
-    { 
-        question: 'What is the nut in the middle of a Ferrero Rocher?',
-        answers: ['Peanut', 'Macadamia', 'Pilly Nut', 'Hazelnut'],
-        answersI: 4,
-    },
-    {
-        question: 'Who is the highest spiritual leader of Tibet?',
-        answers: ['The Pope', 'Jesus Christ', 'James Redfield', 'The Dalai Lama'],
-        answersI: 4,
-    },
-    { 
-        question: 'When was the first iPhone release?',
-        answers: ['2019', '2003', '2007', '2009'],
-        answersI: 3,
-    },
-    { 
-        question: 'What is the largest organ in the human body?',
-        answers: ['The skin', 'The Heart', 'The Liver', 'The Brain'],
-        answersI: 1,
-    }
+    question: 'What is 2 + 2?',
+    answers: [
+        { text: '4', correct: true },
+        { text: '32', correct: false },
+        { text: '5', correct: false },
+        { text: 'Fish?', correct: true } 
+    ]
+},
+{
+    question: 'What is the capital of Finland?',
+    answers: [
+        { text: 'Tokyo', correct: false },
+        { text: 'London', correct: false },
+        { text: 'Helsinki', correct: true },
+        { text: 'New York', correct: false }
+    ]
+},
+{ 
+    question: 'How many bones does a shark have?',
+    answers: [
+        { text: 'None, Its all cartilage', correct: true },
+        { text: '43', correct: false },
+        { text: '76', correct: false },
+        { text: '1', correct: false }
+    ]
+},
+{
+    question: 'Area 51 is located in which American state?',
+    answers: [
+        { text: 'Mississippi', correct: false },
+        { text: 'Texas', correct: false },
+        { text: 'Idaho', correct: false },
+        { text: 'Nevada', correct: true }
+    ]
+},
+{
+    question: 'What is a group of ravens called?',
+    answers: [
+        { text: 'Pack', correct: false },
+        { text: 'Conglomerate', correct: false },
+        { text: 'An Unkindness', correct: true },
+        { text: 'Gaggle', correct: false }
+    ]
+},
+{ 
+    question: 'What is David Bowies original surname?',
+    answers: [
+        { text: 'Hollister', correct: false },
+        { text: 'Humphries', correct: false },
+        { text: 'Dann', correct: false },
+        { text: 'Jones', correct: true }
+    ]
+},
+{
+    question: 'Who won the X Factor in 2011?',
+    answers: [
+        { text: 'Ollie Murs', correct: false },
+        { text: 'Little Mix', correct: true },
+        { text: 'Lincoln Park', correct: false },
+        { text: 'Alexandra Burke', correct: false }
+    ]
+},
+{ 
+    question: 'What grain is the Japanese spirit Sake made from?',
+    answers: [
+        { text: 'Barley', correct: false },
+        { text: 'Rice', correct: true },
+        { text: 'quinoa', correct: false },
+        { text: 'Oats', correct: false }
+    ]
+}, 
+{ 
+    question: 'Who is the manager of the England football team as of 2020?',
+    answers: [
+        { text: 'Sam Allardyce', correct: false },
+        { text: 'Fabio Capello', correct: false },
+        { text: 'Stebe McClaren', correct: false },
+        { text: 'Gareth Southgate', correct: true }
+    ]
+},
+{ 
+    question: 'What year was Google Images invented?',
+    answers: [
+        { text: 'July 2001', correct: true },
+        { text: 'August 2003', correct: false },
+        { text: 'March 2001', correct: false },
+        { text: 'April 2002', correct: false }
+    ]
+},
+{
+    question: 'How many sides does a heptadecagon have?',
+    answers: [
+        { text: '13', correct: false },
+        { text: '17', correct: true },
+        { text: '21', correct: false },
+        { text: '19', correct: false }
+    ]
+},
+{
+    question: 'How many time zones are in Russia?',
+    answers: [
+        { text: '18', correct: false },
+        { text: '11', correct: true }, 
+        { text: '14', correct: false },
+        { text: '9', correct: false }
+    ]
+}, 
+{
+    question: 'Which UK city is the artist Banksy from?',
+    answers: [
+        { text: 'Bristol', correct: true },
+        { text: 'Chelmsford', correct: false },
+        { text: 'Colchester', correct: false },
+        { text: 'Manchester', correct: false }
+    ]
+},
+{ 
+    question: 'Who invented the World Wide Web in 1990?',
+    answers: [
+        { text: 'Jimmy Carr', correct: false },
+        { text: 'Barack Obama', correct: false },
+        { text: 'Tim Burners-Lee', correct: true },
+        { text: 'Stephan Hawking', correct: false }
+    ]
+},
+{
+    question: 'What is a group of spiders called?',
+    answers: [
+        { text: 'Gathering', correct: false },
+        { text: 'Cluster', correct: true },
+        { text: 'Pocahontas', correct: false },
+        { text: 'Huddle', correct: false }
+    ]
+},
+{
+    question: 'What is the smallest country in the world?',
+    answers: [
+        { text: 'Vatican City', correct: true }, 
+        { text: 'Latvia', correct: false },
+        { text: 'Canada', correct: false },
+        { text: 'Libya', correct: false }
+    ]
+}, 
+{
+    question: 'What is the name for a donkey crossed with a zebra?', 
+    answers: [
+    { text: 'Cheetah', correct: false },
+    { text: 'Koala', correct: false },
+    { text: 'Pangolin', correct: false },
+    { text: 'Zeedonk', correct: true }
+    ]
+}, 
+{ 
+    question: 'How many Prime Ministers did the UK have in 2022?',
+    answers: [
+        { text: '3', correct: true },
+        { text: '1', correct: false },
+        { text: '2', correct: false },
+        { text: '5', correct: false }
+    ]
+},
+{
+    question: 'Who was the barista in friends?', 
+    answers: [
+        { text: 'Harry', correct: false }, 
+        { text: 'Gunther', correct: true },
+        { text: 'Ross', correct: false }, 
+        { text: 'Janice', correct: false }
+    ]
+},
+{ 
+    question: 'What does "He" stand for in the periodic table?',
+    answers: [
+        { text: 'Hydrogen', correct: false }, 
+        { text: 'Calcium', correct: false },
+        { text: 'Gold', correct: false },
+        { text: 'Helium', correct: true }
+    ]
+}
 ]

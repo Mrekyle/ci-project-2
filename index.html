@@ -14,25 +14,36 @@
     <body>
         <div class="title">
             <h1>Quizlets</h1>
-            <p>To play the game click the start button and answer as many questions as you can before the time runs out.</p>
+            <p>To play the game click the start button and answer as many questions as you can correctly. 
+                <br>There is a total of 20 questions to test your knowledge.
+            </p>
         </div>
         <div id="stats">
-            <h2 class="score">Score: <span id="score">0</span></h2>
-            <h2 class="time">Time: <span id="time">100</span></h2>
+            <h2 class="score">Correct Answers: <span id="score">0</span></h2>
+            <h2 class="wrong">Wrong Answers: <span id="wrong">0</span></h2>
         </div>
-        <div class="container">
+        <div class="container" id="game-container">
             <div id="question-container" class="hidden">
                 <div id="question">Question</div>
                 <div id="answer-btn" class="btn-grid">
-                    <button class="btn">Answer 1</button>
-                    <button class="btn">Answer 2</button>
-                    <button class="btn">Answer 3</button>
-                    <button class="btn">Answer 4</button>
+                    <button class="btn" id="ans-1" onclick="checkAns()">Answer 1</button>
+                    <button class="btn" id="ans-2" onclick="checkAns()">Answer 2</button>
+                    <button class="btn" id="ans-3" onclick="checkAns()">Answer 3</button>
+                    <button class="btn" id="ans-4" onclick="checkAns()">Answer 4</button>
                 </div>    
             </div>
             <div class="controls">
                 <button id="start-btn" class="start-btn btn">Start</button>
                 <button id="next-btn" class="next-btn btn hidden">Next</button>
+            </div>
+        </div>
+        <div class="end-game-modal hidden" id="end-game">
+            <h1>Congratulations, Your score was:</h1>
+                <br>
+            <div>
+                <h2 class="score">Correct Answers: <span id="score">0</span></h2>
+                <h2 class="wrong">Wrong Answers: <span id="wrong">0</span></h2>
+                <button id="start-btn" class="start-btn btn">Start</button>
             </div>
         </div>
         <div>
