@@ -52,8 +52,9 @@ function showQuestion(question) {
         btn.classList.add('btn');
         if (answer.correct) {
             btn.dataset.correct = answer.correct;
+            
         }
-        btn.addEventListener('click', selectAnswer);
+        btn.addEventListener('click', selectAnswer, checkAns);
         answerElement.appendChild(btn);
         startButton.classList.add('hidden');
     });
@@ -86,10 +87,8 @@ function selectAnswer(event) {
         nextButton.classList.remove('hidden');
     } else {
         startButton.classList.remove('hidden');
-        startButton.innerText = 'Restart';
         gameContainer.classList.add('hidden');
         endGame.classList.remove('hidden');
-        endGame.classList.add('container');
         answerElement.classList.add('hidden');
         questionElement.classList.add('hidden');
     }
@@ -121,16 +120,14 @@ function clearStatus(element) {
  */
 function checkAns(userInput) {
     let currentQ = questions[currentQuestionI];
-
-    if (userInput == currentQ.correct) {
+    console.log('hello World')
+    if (userInput == currentQ.answersI) {
         nextQuestion();
         incrementScore();
     } else {
         nextQuestion();
         incrementWrongScore();
     };
-
-    console.log(userInput);
 }
 
 function incrementScore() {
@@ -144,7 +141,14 @@ function incrementWrongScore() {
 }
 
 function gameOver() {
-
+    if (shuffledQuestions.length > 20) {
+        startButton.innerText = 'Restart';
+        correctAnswer.innerText = correctScoreCount;
+        wrongAnswer.innerText = wrongAnswerCount;
+        gameContainer.classList.add('hidden');
+        endGame.classList.remove('hidden');
+        startButton.addEventListener('click', startNewGame);
+    }
 }
 
 /**
@@ -158,7 +162,7 @@ const questions = [
         { text: '32', correct: false },
         { text: '5', correct: false },
         { text: 'Fish?', correct: true } 
-    ]
+    ],
 },
 {
     question: 'What is the capital of Finland?',

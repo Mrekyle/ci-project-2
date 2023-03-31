@@ -23,27 +23,31 @@
             <h2 class="wrong">Wrong Answers: <span id="wrong">0</span></h2>
         </div>
         <div class="container" id="game-container">
-            <div id="question-container" class="hidden">
-                <div id="question">Question</div>
-                <div id="answer-btn" class="btn-grid">
-                    <button class="btn" id="ans-1" onclick="checkAns()">Answer 1</button>
-                    <button class="btn" id="ans-2" onclick="checkAns()">Answer 2</button>
-                    <button class="btn" id="ans-3" onclick="checkAns()">Answer 3</button>
-                    <button class="btn" id="ans-4" onclick="checkAns()">Answer 4</button>
-                </div>    
-            </div>
-            <div class="controls">
-                <button id="start-btn" class="start-btn btn">Start</button>
-                <button id="next-btn" class="next-btn btn hidden">Next</button>
+            <div class="container-internal">
+                <div id="question-container" class="hidden">
+                    <div id="question">Question</div>
+                    <div id="answer-btn" class="btn-grid">
+                        <button class="btn">Answer 1</button>
+                        <button class="btn">Answer 2</button>
+                        <button class="btn">Answer 3</button>
+                        <button class="btn">Answer 4</button>
+                    </div>    
+                </div>
+                <div class="controls">
+                    <button id="start-btn" class="start-btn btn">Start</button>
+                    <button id="next-btn" class="next-btn btn hidden">Next</button>
+                </div>
             </div>
         </div>
         <div class="end-game-modal hidden" id="end-game">
-            <h1>Congratulations, Your score was:</h1>
-                <br>
-            <div>
-                <h2 class="score">Correct Answers: <span id="score">0</span></h2>
-                <h2 class="wrong">Wrong Answers: <span id="wrong">0</span></h2>
-                <button id="start-btn" class="start-btn btn">Start</button>
+            <div class="modal">
+                <h1>Congratulations, Your score was:</h1>
+                <p>Click restart to try and improve your score!</p>
+                <div>
+                    <h2 class="modal-score">Correct Answers: <span id="score">0</span></h2>
+                    <h2 class="modal-wrong">Wrong Answers: <span id="wrong">0</span></h2>
+                    <button id="start-btn" class="start-btn btn">Start</button>
+               </div>
             </div>
         </div>
         <div>
