@@ -184,6 +184,88 @@ footer {
 
 @media screen and (max-width: 1200px) {}
 
-@media screen and (max-width: 700px) {}
+@media screen and (max-width: 700px) {
 
-@media screen and (max-width: 600px) {}
+    .container {
+        max-width: 500px;
+        font-size: medium;   
+    }
+
+    .container-internal {
+        display: grid;
+        grid-template-columns: 300px 100px;
+        justify-self: center;
+    }
+
+    .start-btn, .next-btn {
+        font-size: 1rem;
+    }
+
+    .title > p {
+        font-size: 20px;
+        margin-bottom: -15px;
+    }
+
+    .end-game-modal {
+        max-width: 500px;
+        overflow: hidden;
+        margin-bottom: -10px;
+    }
+
+    .modal > h1 {
+        font-size: large;
+    }
+
+    .modal > p {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 300px) {
+
+    .title {
+        font-size: medium;
+    }
+
+    .title > p {
+        padding: 0px 5px 0px 5px;
+        font-size: 15px;
+        margin-bottom: 5px;
+    }
+
+     .score, .wrong {
+        font-size: 17px;
+    }
+
+    .end-game-modal {
+        max-width: 280px;
+        margin: 0px 10px 0px 10px;
+    }
+
+    .modal-score, .modal-wrong {
+        font-size: 17px;
+    }
+    
+    .container {
+        max-width: 280px;
+        max-height: 400px;
+    }
+
+    .container-internal {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .start-btn, .next-btn {
+        font-size: .5rem;
+    }
+
+    .btn {
+        font-size: 12px;
+    }
+
+    #question {
+        font-size: 15px;
+    }
+}
