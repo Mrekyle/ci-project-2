@@ -6,7 +6,7 @@ const questionElement = document.getElementById('question');
 const answerElement = document.getElementById('answer-btn')
 const correctAnswer = document.getElementById('score');
 const wrongAnswer = document.getElementById('wrong');
-const endGame = document.getElementById('end-game')
+const endGame = document.getElementById('end-game');
 
 let correctScoreCount = 0;
 let wrongAnswerCount = 0;

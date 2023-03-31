@@ -201,6 +201,10 @@ footer {
         font-size: 1rem;
     }
 
+    .title {
+        margin-top: 5px;
+    }
+    
     .title > p {
         font-size: 20px;
         margin-bottom: -15px;
@@ -224,6 +228,7 @@ footer {
 @media screen and (max-width: 300px) {
 
     .title {
+        margin-top: 5px;
         font-size: medium;
     }
 
