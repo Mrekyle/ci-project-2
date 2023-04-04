@@ -119,11 +119,11 @@ Html Testing on W3C Validator -
 
 Html Fail
 
-<img alt="Html Validator Fail" height="400px" width="400px" src="docs/readme-info/html-fail.png">
+<img alt="Html Validator Fail" height="400px" width="700px" src="docs/readme-info/html-fail.png">
 
 Html Pass
 
-<img alt="Html Validator Pass" height="400px" width="400px" src="docs/readme-info/html-pass.png">
+<img alt="Html Validator Pass" height="400px" width="700px" src="docs/readme-info/html-pass.png">
 
 ### CSS
 
@@ -131,11 +131,11 @@ CSS Testing on W3c Validator -
 
 CSS Fail 
 
-<img alt="CSS Validator Fail" height="400px" width="400px" src="docs/readme-info/css-fail.png">
+<img alt="CSS Validator Fail" height="400px" width="700px" src="docs/readme-info/css-fail.png">
 
 CSS Pass
 
-<img alt="CSS Validator Pass" height="400px" width="400px" src="docs/readme-info/css-pass.png">
+<img alt="CSS Validator Pass" height="400px" width="700px" src="docs/readme-info/css-pass.png">
 
 ### JS
 
@@ -143,11 +143,11 @@ CSS Pass
 
 Lighthouse was used to test the initial performance, accessibility, best coding practices and SEO of the entire web application. In the below image is the outputted score. The performance is slightly low due to chrome extensions interfering with the testing. 
 
-<img alt="Lighthouse testing" height="400px" width="400px" src="docs/readme-info/lighthouse.png">
+<img alt="Lighthouse testing" height="400px" width="700px" src="docs/readme-info/lighthouse.png">
 
 It was recommended to redo the test in Incognito mode. Which is done below. Giving a small increase in performance. 
 
-<img alt="Lighthouse testing" height="400px" width="400px" src="docs/readme-info/lighthouse2.png">
+<img alt="Lighthouse testing" height="400px" width="700px" src="docs/readme-info/lighthouse2.png">
 
 ## Bugs
 
