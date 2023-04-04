@@ -1,8 +1,8 @@
 # Quizzels
 
-Link to live Quizzels project: [Quizzels - CI Project Two]()
+Link to live Quizzels project: [Quizzels - CI Project Two](https://mrekyle.github.io/ci-project-2/)
 
-RESPONSIVE IMAGE GOES HERE
+<img alt="Responsive website testing" src="docs/readme-info/responsive.png">
 
 
 ## Table of Contents 
@@ -159,6 +159,18 @@ only one answer being displayed at a time
 not being able to compare the answers to pass through to the score tracker
 
 ## Project Deployment
+
+Github pages was used to deploy the application live to the intrnet. The live Quiz can be found [Here](https://mrekyle.github.io/ci-project-2/)
+
+The deployment steps are as follows - 
+
+<img alt="Deployment step 1" height="350px" width="600px" src="docs/readme-info/deployment-1.png">
+
+<img alt="Deployment step 2" height="350px" width="600px" src="docs/readme-info/deployment-2.png">
+
+<img alt="Deployment step 3" height="350px" width="600px" src="docs/readme-info/deployment-3.png">
+
+<img alt="Deployment step 4" height="350px" width="600px" src="docs/readme-info/deployment-4.png">
 
 ## Sources
 
