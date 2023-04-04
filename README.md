@@ -109,15 +109,45 @@ During the development of the app multiple different types of technology was use
 
 ## App Testing
 
+During the development of the Project it has been subjected to different testing methods to ensure that all points are hit. No errors are found in the code as well as manual testing of the app to ensure everything works as intended. 
+
 buttons clicked with intended result color changing, next question, resetting the game
 
 ### HTML
 
+Html Testing on W3C Validator - 
+
+Html Fail
+
+<img alt="Html Validator Fail" height="400px" width="400px" src="docs/readme-info/html-fail.png">
+
+Html Pass
+
+<img alt="Html Validator Pass" height="400px" width="400px" src="docs/readme-info/html-pass.png">
+
 ### CSS
+
+CSS Testing on W3c Validator - 
+
+CSS Fail 
+
+<img alt="CSS Validator Fail" height="400px" width="400px" src="docs/readme-info/css-fail.png">
+
+CSS Pass
+
+<img alt="CSS Validator Pass" height="400px" width="400px" src="docs/readme-info/css-pass.png">
 
 ### JS
 
 ### Lighthouse
+
+Lighthouse was used to test the initial performance, accessibility, best coding practices and SEO of the entire web application. In the below image is the outputted score. The performance is slightly low due to chrome extensions interfering with the testing. 
+
+<img alt="Lighthouse testing" height="400px" width="400px" src="docs/readme-info/lighthouse.png">
+
+It was recommended to redo the test in Incognito mode. Which is done below. Giving a small increase in performance. 
+
+<img alt="Lighthouse testing" height="400px" width="400px" src="docs/readme-info/lighthouse2.png">
 
 ## Bugs
 
