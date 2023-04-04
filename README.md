@@ -92,9 +92,21 @@ Future features that I plan to add are
 
 ### Home
 
+Final home page design 
+
+<img alt="Home Page" height="350px" width="400px" src="docs/readme-info/home.png">
+
 ### Quiz
 
+Final quiz game design 
+
+<img alt="Quiz Page" height="350px" width="400px" src="docs/readme-info/quiz-page.png">
+
 ### End Game
+
+Final Endgame design
+
+<img alt="Endgame Page" height="350px" width="400px" src="docs/readme-info/end-game.png">
 
 ## Technology Used
 
