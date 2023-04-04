@@ -130,19 +130,28 @@ function checkAns(userInput) {
     };
 }
 
+/**
+ * Increments the correct answer score count
+ */
 function incrementScore() {
     correctScoreCount++;
     score.innerText = correctScoreCount;
 }
 
+/**
+ * Increments the incorrect score answer count
+ */
 function incrementWrongScore() {
     wrongAnswerCount++;
     wrongAnswer.innerText = wrongAnswerCount;
 }
 
+/**
+ * Game over function is called when the quiz ends to set the end screen modal allowing a final score 
+ * and to restart the game.
+ */
 function gameOver() {
     if (shuffledQuestions.length > 20) {
-        startButton.innerText = 'Restart';
         correctAnswer.innerText = correctScoreCount;
         wrongAnswer.innerText = wrongAnswerCount;
         gameContainer.classList.add('hidden');
