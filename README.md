@@ -109,7 +109,7 @@ During the development of the app multiple different types of technology was use
 
 ## App Testing
 
-During the development of the Project it has been subjected to different testing methods to ensure that all points are hit. No errors are found in the code as well as manual testing of the app to ensure everything works as intended. 
+During the development of the Project it has been subjected to different testing methods to ensure that all points are hit. No errors are found in the code as well as manual testing of the app to ensure everything works as intended. There was also testing involved to ensure that the application would be responsive and work on all screen sizes and device types. To allow for the best accessability possible. The image for this can be found at the top of the document.
 
 buttons clicked with intended result color changing, next question, resetting the game
 
