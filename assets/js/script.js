@@ -7,6 +7,7 @@ const answerElement = document.getElementById('answer-btn')
 const correctAnswer = document.getElementById('score');
 const wrongAnswer = document.getElementById('wrong');
 const endGame = document.getElementById('end-game');
+const restartGame = document.getElementById('restart-game');
 
 let correctScoreCount = 0;
 let wrongAnswerCount = 0;
@@ -52,9 +53,8 @@ function showQuestion(question) {
         btn.classList.add('btn');
         if (answer.correct) {
             btn.dataset.correct = answer.correct;
-            
         }
-        btn.addEventListener('click', selectAnswer, checkAns);
+        btn.addEventListener('click', selectAnswer);
         answerElement.appendChild(btn);
         startButton.classList.add('hidden');
     });
@@ -147,7 +147,7 @@ function gameOver() {
         wrongAnswer.innerText = wrongAnswerCount;
         gameContainer.classList.add('hidden');
         endGame.classList.remove('hidden');
-        startButton.addEventListener('click', startNewGame);
+        restartGame.addEventListener('click', startNewGame);
     }
 }
 
