@@ -4,13 +4,10 @@ const gameContainer = document.getElementById('game-container');
 const questionContainer = document.getElementById('question-container');
 const questionElement = document.getElementById('question');
 const answerElement = document.getElementById('answer-btn')
-const correctAnswer = document.getElementById('score');
-const wrongAnswer = document.getElementById('wrong');
+const correctAnswer = document.getElementsByClassName('score');
+const wrongAnswer = document.getElementsByClassName('wrong');
 const endGame = document.getElementById('end-game');
 const restartButton = document.getElementById('restart-btn');
-
-let correctScoreCount = 0;
-let wrongAnswerCount = 0;
 
 let shuffledQuestions;
 let currentQuestionI;
@@ -35,6 +32,7 @@ function startNewGame() {
     currentQuestionI = 0;
     questionContainer.classList.remove('hidden');
     nextQuestion();
+    correctAnswer.innerText = 0;
 }
 
 /**
@@ -83,13 +81,15 @@ function resetQuiz() {
 function selectAnswer(event) {
     const selectedButton = event.target;
     const correct = selectedButton.dataset.correct;
-    setStatus(document.body, correct);
+    
     Array.from(answerElement.children).forEach(btn => {
         setStatus(btn, btn.dataset.correct);
     })
     if (shuffledQuestions.length > currentQuestionI +1) {
         nextButton.classList.remove('hidden');
+        incrementCorrect();
     } else {
+        incrementWrong();
         startButton.classList.remove('hidden');
         gameContainer.classList.add('hidden');
         endGame.classList.remove('hidden');
@@ -99,6 +99,9 @@ function selectAnswer(event) {
     
 }
 
+
+// Add if else into selectanswer to compare answers and increment with ++ put into DOM with innerhtml
+
 /**
  * Adds correct or wrong classes to the html elements.
  */
@@ -106,9 +109,26 @@ function setStatus(element, correct) {
     clearStatus(element);
     if(correct) {
         element.classList.add('correct');
+        console.log(correctAns)
     } else {
         element.classList.add('wrong');
+        console.log(wrongAns)
     }
+}
+
+let correctAns = 0;
+let wrongAns = 0;
+
+function incrementCorrect () {
+    correctAns++;
+    correctAnswer.innerText = correctAns;
+    console.log("Correct answer:", correctAns)
+}
+
+function incrementWrong () {
+    wrongAns++;
+    wrongAnswer.innerText = wrongAns;
+    console.log("Wrong answer:", wrongAns)
 }
 
 /**
@@ -120,44 +140,13 @@ function clearStatus(element) {
 }
 
 /**
- * Changes the stats of the quiz score and timer
- */
-function checkAns(userInput) {
-    let currentQ = questions[currentQuestionI];
-    console.log('hello World')
-    if (userInput == currentQ.answersI) {
-        nextQuestion();
-        incrementScore();
-    } else {
-        nextQuestion();
-        incrementWrongScore();
-    };
-}
-
-/**
- * Increments the correct answer score count
- */
-function incrementScore() {
-    correctScoreCount++;
-    score.innerText = correctScoreCount;
-}
-
-/**
- * Increments the incorrect score answer count
- */
-function incrementWrongScore() {
-    wrongAnswerCount++;
-    wrongAnswer.innerText = wrongAnswerCount;
-}
-
-/**
  * Game over function is called when the quiz ends to set the end screen modal allowing a final score 
  * and to restart the game.
  */
 function gameOver() {
     if (shuffledQuestions.length > 20) {
-        correctAnswer.innerText = correctScoreCount;
-        wrongAnswer.innerText = wrongAnswerCount;
+        correctAnswer.innerText = correctAns;
+        wrongAnswer.innerText = wrongAns;
         gameContainer.classList.add('hidden');
         endGame.classList.remove('hidden');
     }
@@ -173,8 +162,9 @@ const questions = [
         { text: '4', correct: true },
         { text: '32', correct: false },
         { text: '5', correct: false },
-        { text: 'Fish?', correct: true } 
+        { text: 'Fish?', correct: false } 
     ],
+    answersI : 1, 
 },
 {
     question: 'What is the capital of Finland?',

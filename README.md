@@ -125,6 +125,10 @@ During the development of the Project it has been subjected to different testing
 
 buttons clicked with intended result color changing, next question, resetting the game
 
+| Test | Intended Result | Result |
+|------|-----------------|--------|
+|Start Button Press | To start the quiz and display the first question | Passed 
+
 ### HTML
 
 Html Testing on W3C Validator - 
@@ -165,10 +169,11 @@ It was recommended to redo the test in Incognito mode. Which is done below. Givi
 
 During the development of the application there were many different bugs along the way. From a simple syntax error to a quiz breaking bug. Some of them are in the table below.
 
-arrary wrong image
-css code shifitng the content around the page when wrong answer selected 
-only one answer being displayed at a time
-not being able to compare the answers to pass through to the score tracker
+
+| Bug | Fix |
+|-----|-----|
+| Only one answer being shown at a time | Filtering through the array to display multiple answers and create multiple buttons |
+| Css shifting the elements around the page. Error on an id adding a margin on the wrong element | Removed unused syntax | 
 
 ## Project Deployment
 
