@@ -7,7 +7,7 @@ const answerElement = document.getElementById('answer-btn')
 const correctAnswer = document.getElementById('score');
 const wrongAnswer = document.getElementById('wrong');
 const endGame = document.getElementById('end-game');
-const restartGame = document.getElementById('restart-game');
+const restartButton = document.getElementById('restart-btn');
 
 let correctScoreCount = 0;
 let wrongAnswerCount = 0;
@@ -21,12 +21,16 @@ nextButton.addEventListener('click', () => {
     nextQuestion();
 })
 
+restartButton.addEventListener('click', startNewGame);
+
 /**
  * Starts a new game when the quiz is loaded and the button is pressed
  */
 function startNewGame() {
     console.log('Game Started');
     startButton.classList.add('hidden');
+    gameContainer.classList.remove('hidden');
+    endGame.classList.add('hidden');
     shuffledQuestions = questions.sort(() => Math.random() - .5);
     currentQuestionI = 0;
     questionContainer.classList.remove('hidden');
@@ -156,7 +160,6 @@ function gameOver() {
         wrongAnswer.innerText = wrongAnswerCount;
         gameContainer.classList.add('hidden');
         endGame.classList.remove('hidden');
-        restartGame.addEventListener('click', startNewGame);
     }
 }
 
