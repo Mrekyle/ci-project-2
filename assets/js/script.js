@@ -26,7 +26,7 @@ let wrongAns = 0;
 // Starting the game functions and operations
 startButton.addEventListener('click', startNewGame);
 nextButton.addEventListener('click', () => {
-    if (currentQuestionI > 20) {
+    if (currentQuestionI <= 20) {
         currentQuestionI++
         nextQuestion();
     } else {
