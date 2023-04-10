@@ -158,8 +158,6 @@ CSS Pass
 
 <img alt="CSS Validator Pass" height="400px" width="700px" src="docs/readme-info/css-pass.png">
 
-### JS
-
 ### Lighthouse
 
 Lighthouse was used to test the initial performance, accessibility, best coding practices and SEO of the entire web application. In the below image is the outputted score. The performance is slightly low due to chrome extensions interfering with the testing. 
