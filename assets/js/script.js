@@ -4,18 +4,28 @@ const gameContainer = document.getElementById('game-container');
 const questionContainer = document.getElementById('question-container');
 const questionElement = document.getElementById('question');
 const answerElement = document.getElementById('answer-btn')
-const correctAnswer = document.getElementsByClassName('score');
+const correctAnswer = document.getElementById('score');
 const wrongAnswer = document.getElementsByClassName('wrong');
 const endGame = document.getElementById('end-game');
 const restartButton = document.getElementById('restart-btn');
+const titleTxt = document.getElementById('title-txt');
+const finalScore = document.getElementById('final-score');
 
 let shuffledQuestions;
 let currentQuestionI;
 
+let correctAns = 0;
+let wrongAns = 0;
+
 startButton.addEventListener('click', startNewGame);
 nextButton.addEventListener('click', () => {
-    currentQuestionI++
-    nextQuestion();
+    if (shuffledQuestions <= 20) {
+        currentQuestionI++
+        nextQuestion();
+    } else {
+        gameContainer.classList.add('hidden');
+        endGame.classList.remove('hidden');
+    }
 })
 
 restartButton.addEventListener('click', startNewGame);
@@ -28,11 +38,12 @@ function startNewGame() {
     startButton.classList.add('hidden');
     gameContainer.classList.remove('hidden');
     endGame.classList.add('hidden');
+    titleTxt.classList.add('hidden');
     shuffledQuestions = questions.sort(() => Math.random() - .5);
     currentQuestionI = 0;
     questionContainer.classList.remove('hidden');
     nextQuestion();
-    correctAnswer.innerText = 0;
+    // correctAnswer.innerText = 0;
 }
 
 /**
@@ -82,25 +93,19 @@ function selectAnswer(event) {
     const selectedButton = event.target;
     const correct = selectedButton.dataset.correct;
     
+    processResults(correct);
     Array.from(answerElement.children).forEach(btn => {
         setStatus(btn, btn.dataset.correct);
     })
-    if (shuffledQuestions.length > currentQuestionI +1) {
+    if (shuffledQuestions.length > currentQuestionI +1, correct) {
         nextButton.classList.remove('hidden');
-        incrementCorrect();
+        console.log('Correct Answer:', correctAns)
     } else {
-        incrementWrong();
-        startButton.classList.remove('hidden');
-        gameContainer.classList.add('hidden');
-        endGame.classList.remove('hidden');
-        answerElement.classList.add('hidden');
-        questionElement.classList.add('hidden');
+        nextButton.classList.remove('hidden');
+        console.log('Wrong Answer:', wrongAns);
     }
     
 }
-
-
-// Add if else into selectanswer to compare answers and increment with ++ put into DOM with innerhtml
 
 /**
  * Adds correct or wrong classes to the html elements.
@@ -109,26 +114,9 @@ function setStatus(element, correct) {
     clearStatus(element);
     if(correct) {
         element.classList.add('correct');
-        console.log(correctAns)
     } else {
         element.classList.add('wrong');
-        console.log(wrongAns)
     }
-}
-
-let correctAns = 0;
-let wrongAns = 0;
-
-function incrementCorrect () {
-    correctAns++;
-    correctAnswer.innerText = correctAns;
-    console.log("Correct answer:", correctAns)
-}
-
-function incrementWrong () {
-    wrongAns++;
-    wrongAnswer.innerText = wrongAns;
-    console.log("Wrong answer:", wrongAns)
 }
 
 /**
@@ -139,18 +127,19 @@ function clearStatus(element) {
     element.classList.remove('wrong');
 }
 
-/**
- * Game over function is called when the quiz ends to set the end screen modal allowing a final score 
- * and to restart the game.
+/** 
+ * Check the answer and adds the score to the correct score count on the DOM
  */
-function gameOver() {
-    if (shuffledQuestions.length > 20) {
-        correctAnswer.innerText = correctAns;
-        wrongAnswer.innerText = wrongAns;
-        gameContainer.classList.add('hidden');
-        endGame.classList.remove('hidden');
+function processResults(isCorrect) {
+    if (!isCorrect) {
+      return;
     }
-}
+    
+    const scoreUp = parseInt(correctAnswer.innerText, 10) || 0;
+  
+    correctAnswer.textContent = scoreUp + 100;
+    finalScore.innerText = scoreUp + 100;
+  }
 
 /**
  * Questions for the Quiz

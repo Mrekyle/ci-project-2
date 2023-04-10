@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="theme-color" content="#424187"/>
-    <meta name="Description" content="Put your skills to the test in the Quizlits Quiz">
-    <meta name="keywords" content="Quiz Game, Quizlits">
+    <meta name="Description" content="Put your skills to the test in the Quizles Quiz">
+    <meta name="keywords" content="Quiz Game, Quizles">
     <meta name="author" content="Kyle Chart">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="icon" type="image/x-icon" href="assets/images/quiz-fav.png">
@@ -17,14 +17,16 @@
         <!-- Quiz app title section -->
         <div class="title">
             <h1>Quizzles</h1>
-            <p>To play the game click the start button and answer as many questions as you can correctly. 
-                <br>There is a total of 20 questions to test your knowledge.
-            </p>
+            <div id="title-txt">
+                <p>To play the game click the start button and answer as many questions as you can correctly. 
+                    <br>There is a total of 20 questions to test your knowledge.
+                </p>
+            </div>
         </div>
 
         <!-- Quiz stats section -->
         <div id="stats">
-            <h2 class="score">Correct Answers: <span class="score">0</span></h2>
+            <h2 class="score">Correct Answers: <span id="score">0</span></h2>
             <h2 class="wrong">Wrong Answers: <span class="wrong">0</span></h2>
         </div>
 
@@ -53,7 +55,7 @@
                 <h1>Congratulations, Your score was:</h1>
                 <p>Click restart to try and improve your score!</p>
                 <div>
-                    <h2 class="modal-score">Correct Answers: <span class="score">0</span></h2>
+                    <h2 class="modal-score">Correct Answers: <span id="final-score">0</span></h2>
                     <h2 class="modal-wrong">Wrong Answers: <span class="wrong">0</span></h2>
                     <button id="restart-btn" class="start-btn btn">Restart</button>
                </div>

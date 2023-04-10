@@ -80,6 +80,7 @@ The basic features that are currently implemented into the Quiz are
 
 Future features that I plan to add are
 
+- Wrong score count
 - User profiles
 - Image quiz
 - Different Genre's
