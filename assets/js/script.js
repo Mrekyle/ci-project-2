@@ -12,6 +12,7 @@ const endGame = document.getElementById('end-game');
 const restartButton = document.getElementById('restart-btn');
 const titleTxt = document.getElementById('title-txt');
 const finalScore = document.getElementById('final-score');
+const stats = document.getElementById('stats');
 
 
 // Misc Variables
@@ -25,12 +26,13 @@ let wrongAns = 0;
 // Starting the game functions and operations
 startButton.addEventListener('click', startNewGame);
 nextButton.addEventListener('click', () => {
-    if (currentQuestionI < 20) {
+    if (currentQuestionI > 20) {
         currentQuestionI++
         nextQuestion();
     } else {
         gameContainer.classList.add('hidden');
         endGame.classList.remove('hidden');
+        stats.classList.add('hidden');
     }
 })
 

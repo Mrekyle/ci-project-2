@@ -126,13 +126,13 @@ During the development of the app multiple different types of technology was use
 
 During the development of the Project it has been subjected to different testing methods to ensure that all points are hit. No errors are found in the code as well as manual testing of the app to ensure everything works as intended. There was also testing involved to ensure that the application would be responsive and work on all screen sizes and device types. To allow for the best accessability possible. The image for this can be found at the top of the document.
 
-buttons clicked with intended result color changing, next question, resetting the game
 
 | Test | Intended Result | Result |
 |------|-----------------|--------|
 |Start button press | To start the quiz and display the first question | Passed |
 |Next button press | To click through to the next question and check if correct | Passed |
 |Reset button press | To reset the quiz once completed | Passed |
+|Color change | Color change on buttons based on correct an wrong answers | Passed | 
 
 ### HTML
 
@@ -182,7 +182,7 @@ During the development of the application there were many different bugs along t
 
 ## Project Deployment
 
-Github pages was used to deploy the application live to the intrnet. The live Quiz can be found [Here](https://mrekyle.github.io/ci-project-2/)
+Github pages was used to deploy the application live to the internet. The live Quiz can be found [Here](https://mrekyle.github.io/ci-project-2/)
 
 The deployment steps are as follows - 
 
