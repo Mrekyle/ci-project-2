@@ -1,3 +1,5 @@
+
+// DOM Selectors
 const startButton = document.getElementById('start-btn');
 const nextButton = document.getElementById('next-btn');
 const gameContainer = document.getElementById('game-container');
@@ -11,15 +13,19 @@ const restartButton = document.getElementById('restart-btn');
 const titleTxt = document.getElementById('title-txt');
 const finalScore = document.getElementById('final-score');
 
+
+// Misc Variables
 let shuffledQuestions;
 let currentQuestionI;
 
 let correctAns = 0;
 let wrongAns = 0;
 
+
+// Starting the game functions and operations
 startButton.addEventListener('click', startNewGame);
 nextButton.addEventListener('click', () => {
-    if (shuffledQuestions <= 20) {
+    if (currentQuestionI < 20) {
         currentQuestionI++
         nextQuestion();
     } else {
@@ -43,7 +49,6 @@ function startNewGame() {
     currentQuestionI = 0;
     questionContainer.classList.remove('hidden');
     nextQuestion();
-    // correctAnswer.innerText = 0;
 }
 
 /**

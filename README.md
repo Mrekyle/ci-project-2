@@ -68,12 +68,14 @@ Whilst the wire frames may not be accurate to the device screen size. The design
 
 ## Features 
 
+- Removed | Wrong score count due to feature not working in final build before project deadline. | With all code relating being removed
+
 ### Implemented
 
 The basic features that are currently implemented into the Quiz are
 
 - Multiple Quiz Questions
-- Score counter for correct and wrong answers
+- Score counter for correct answers
 - Resetting the quiz to try again once the quiz is finished 
 
 ### Future Development
@@ -128,7 +130,9 @@ buttons clicked with intended result color changing, next question, resetting th
 
 | Test | Intended Result | Result |
 |------|-----------------|--------|
-|Start Button Press | To start the quiz and display the first question | Passed 
+|Start button press | To start the quiz and display the first question | Passed |
+|Next button press | To click through to the next question and check if correct | Passed |
+|Reset button press | To reset the quiz once completed | Passed |
 
 ### HTML
 
